@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="quem_somos.html">Quem somos</a></li>
-                        <li><a href="conta.html">Conta</a></li>
+                        <li><a href="bolsas.html">Bolsas</a></li>
                         <li><a href="investimentos.html">Investimentos</a></li>
                         <li><a class="active" href="contato.html">Contato</a></li>
                     </ul>
@@ -29,6 +29,57 @@
         <main>
             <div class="wrapper">
                 <h1>Contato</h1>
+
+                <form>
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="nome" name="nome">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Preferências</legend>
+                        <p>Em qual bolsa você tem mais investimentos ?</p>
+                        <div>
+                            <input type="radio" id="ibovespa" name="bolsa" value="ibovespa">
+                            <label for="ibovespa">Ibovespa</label>    
+                        </div>
+                        <div>
+                            <input type="radio" id="nasdaq" name="bolsa" value="nasdaq">
+                            <label for="nasdaq">Nasdaq</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="nyse" name="bolsa" value="nyse">
+                            <label for="nyse">Nyse</label>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="newsletter" name="news">
+                            <label for="newsletter">Deseja recever nossos informativos?</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="termos" name="termos">
+                            <label for="termos">Aceita nossos termos de uso?</label>
+                        </div>
+                    </fieldset>
+                    
+
+                    <label for="">Qual seu Estado?</label>
+                    <select name="estados" id="estados">
+                        <option value="">São Paulo</option>
+                        <option value="">Rio de Janeiro</option>
+                        <option value="">Minas Gerais</option>
+                        <option value="">Espirito Santo</option>
+                    </select>
+
+                    <label for="comentario">Digite seu comentário:</label>
+                    <textarea name="comentario" id="comentario"></textarea>
+
+                    <input type="submit" value="Enviar">
+                </form>
+
             </div>
         </main>
     </body>

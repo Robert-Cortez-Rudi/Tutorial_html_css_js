@@ -74,3 +74,81 @@ header nav ul li a:hover {
 main {
     color: #FFF;
 }
+
+table {
+    border: 1px solid #FFF;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #FFF;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #575757;
+}
+
+tr:nth-child(odd) {
+    background-color: #3a3a3a;
+}
+
+
+tr:nth-child(1) {
+    background-color: #474747;
+}
+
+
+tr:nth-child(2) {
+    background-color: #808080;
+}
+
+td:nth-child(1) {
+    background-color: #474747;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+
+}
+
+fieldset:first-child {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+input[type = text], input[type = password], select, textarea  {
+    padding: 3px 8px;
+    border-radius: 10px;
+    background-color: #808080;
+    border: none;
+    margin: 5px 0 10px 0 ;
+    color: #FFF;
+    font-size: 16px;
+}
+
+select {
+    width: fit-content;
+    
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4fff0f;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background-color: #4ab921;
+}
+
+fieldset {
+    border: 1px solid #464646;
+    border-radius: 20px;
+}
