@@ -30,6 +30,7 @@
                 id: 10,
                 nome: "Robert",
                 sobrenome: "Rudi",
+
                 email: "robertrudi@gmail.com",
                 endereco: {
                     rua: "rua que n existe",
@@ -44,6 +45,8 @@
             const idAdmins = [1, 7, 11, 10]
             
             console.log(`Olá ${user.nome_completo(user.nome, user.sobrenome)}, seja bem-vindo!`)
+
+            console.log(`Olá ${user.endereco.numero}, seja bem-vindo!`)
         </script>
     </head>
     <body>
