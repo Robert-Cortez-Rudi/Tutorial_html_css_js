@@ -100,9 +100,16 @@
                 <br><br>
 
                 <div>
-                    <input type="text" id=""> // TERMINAR
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor">
+                    <button onclick="inserir_cor()">Inserir Cor</button> 
+                    <div style="display: flex;" id="cores">
+                        <div id="paleta"></div>
+                    </div>
                 </div>
  
+
+
 
             </div>
         </main>
@@ -159,6 +166,13 @@
             }
 
         }
+
+        function inserir_cor(){
+            const cor = document.getElementById("cor")
+            const cores = document.getElementById("cores")
+
+        }
+
 
 
     </script>
