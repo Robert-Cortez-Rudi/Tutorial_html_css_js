@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selection</title>
+    <link rel="stylesheet" href="css/query_selection.css">
+</head>
+<body>
+    <div id="inserir">
+        <label for="imagem">Imagem:</label>
+        <input type="url" id="imagem">
+
+        <select name="tipo" id="tipo">
+            <option value="cabeca">Cabeça</option>
+            <option value="corpo">Corpo</option>
+            <option value="perna">Perna</option>
+        </select>
+
+        <button onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div id="membros">
+        <p>Cabeças:</p>
+        <div id="cabeca"></div>
+
+        <p>Corpos:</p>
+        <div id="corpo"></div>
+
+        <p>Pernas:</p>
+        <div id="perna"></div>
+    </div>
+
+    <br>
+
+    <div id="corpo-completo">
+        <p>Corpo completo:</p>
+        <div id="parte-cabeca"></div>
+        <div id="parte-corpo"></div>
+        <div id="parte-perna"></div>
+    </div>
+
+
+</body>
+<script>
+
+    function adicionar() {
+        const imagem = document.querySelector("#imagem").value
+        const tipo = document.querySelector("#tipo").value
+
+        if (tipo == "cabeca") {
+            const cabeca = document.querySelector("#cabeca")
+            cabeca.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
+        }
+
+        if (tipo == "corpo") {
+            const corpo = document.querySelector("#corpo")
+            corpo.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
+        }
+
+        if (tipo == "perna") {
+            const perna = document.querySelector("#perna")
+            perna.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
+        }
+    }
+
+    function inserirCorpoCompleto() {
+        const imagem = document.querySelector("#imagem").value
+        const corpo = document.querySelector("#corpo-completo")
+        corpo.innerHTML += `<div style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></div>`;
+    }
+
+</script>
+</html>
