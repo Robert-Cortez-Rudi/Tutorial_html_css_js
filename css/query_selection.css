@@ -1,0 +1,24 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe-UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira-Sans, Droid-Sans, Helvetica-Neue, sans-serif;
+}
+
+#inserir {
+    display: flex;
+
+    gap: 10px;
+}
+
+#inserir input#imagem {
+    width: 200px;
+}
+
+#inserir select {
+    width: 100px;
+}
+
+#cabeca, #corpo, #perna {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+}
+
