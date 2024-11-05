@@ -48,26 +48,36 @@
         const imagem = document.querySelector("#imagem").value
         const tipo = document.querySelector("#tipo").value
 
-        if (tipo == "cabeca") {
-            const cabeca = document.querySelector("#cabeca")
-            cabeca.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
+        if (!imagem) {
+            alert("Por favor, insira uma URL de imagem.")
+            return
         }
 
-        if (tipo == "corpo") {
-            const corpo = document.querySelector("#corpo")
-            corpo.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
+        let targetElement;
+
+        switch (tipo) {
+            case "cabeca":
+                targetElement = document.querySelector("#cabeca")
+                break
+            case "corpo":
+                targetElement = document.querySelector("#corpo")
+                break
+            case "perna":
+                targetElement = document.querySelector("#perna")
+                break
+            default:
+                alert("Tipo inválido.")
+                return
         }
 
-        if (tipo == "perna") {
-            const perna = document.querySelector("#perna")
-            perna.innerHTML += `<button onclick="inserirCorpoCompleto()" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`;
-        }
+        targetElement.innerHTML += `<button onclick="inserirCorpoCompleto('${tipo}', '${imagem}')" style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></button>`
     }
 
-    function inserirCorpoCompleto() {
-        const imagem = document.querySelector("#imagem").value
-        const corpo = document.querySelector("#corpo-completo")
-        corpo.innerHTML += `<div style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></div>`;
+    function inserirCorpoCompleto(tipo, imagem) {
+        if (tipo == "cabeca" || tipo == "corpo" || tipo == "perna") {
+            const parte_corpo = document.querySelector(`#corpo-completo #parte-${tipo}`)
+            parte_corpo.innerHTML = `<div style="background-image: url(${imagem}); background-size: cover; background-position: center; width: 50px; height: 50px; border: none;"></div>`
+        }
     }
 
 </script>
