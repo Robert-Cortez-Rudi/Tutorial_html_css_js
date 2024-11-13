@@ -5,48 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IF Finance</title>
         <link rel="stylesheet" href="./css/style.css">
-        <script>
-            var nome = "Robert"
-            let idade = 18
-            const linguagem = "JS"
 
-            function nomeCompleto(nome, sobrenome) { // 1 forma de fazer uma função
-                nome_completo = `${nome} ${sobrenome}`
-                return nome_completo
-            }
-
-            const nCompleto = function(nome, sobrenome) { // 2 forma de fazer uma função (anonima)
-                nome_completo = `${nome} ${sobrenome}`
-                return nome_completo
-            }
-
-            const nmCompleto = (nome, sobrenome) => { // 3 forma de fazer uma função (Arroy Function)
-                nome_completo = `${nome} ${sobrenome}`
-                return nome_completo
-            } 
-
-
-            const user = {
-                id: 10,
-                nome: "Robert",
-                sobrenome: "Rudi",
-
-                email: "robertrudi@gmail.com",
-                endereco: {
-                    rua: "rua que n existe",
-                    numero: 171
-                },
-                nome_completo: (nome, sobrenome) => { // 3 forma de fazer uma função (Arroy Function)
-                nome_completo = `${nome} ${sobrenome}`
-                return nome_completo
-                }
-            }
-
-            const idAdmins = [1, 7, 11, 10]
-            
-            console.log(`Olá ${user.nome_completo(user.nome, user.sobrenome)}, seja bem-vindo!`)
-
-        </script>
     </head>
     <body>
         <header>
@@ -70,111 +29,27 @@
         </header>
         <main>
             <div class="wrapper">
-                <h1>Home</h1>
-
-                <input type="text" id="TxtInput">
-
-                <button onclick="Pegar_texto()">Pegar texto</button>
-                <button onclick="mudar()">Teste</button>
-
-                <div id="resultado"></div>
-
-                <input type="text" id="entradaCor">
-
-                <button onclick="trocar_cor()">Aplicar Cor</button>
-
-                <div id="cor" style="background-color: #FFFFFF; width: 450px; height: 450px;"></div>
-
-                <br>
-                <div>
-                    <input id="num1" type="text" style="background-color: #FFFFFF; width: 50px; color: black; text-align: center;">
-                    <input id="num2" type="text" style="background-color: #FFFFFF; width: 50px; color: black; text-align: center;">
-                    <br>    
-                    <button onclick="calcular('+')">+</button>
-                    <button onclick="calcular('-')">-</button>
-                    <br>
+                <div class="flex-bt align-center">
+                    <h1>Home</h1>
+                    <button style="height: 40px;" onclick="openModal()">Adicionar</button>
                 </div>
-                <br>
-                <div id="conta"></div>
 
-                <br><br>
-
-                <div>
-                    <label for="cor">Cor:</label>
-                    <input type="text" id="cor">
-                    <button onclick="inserir_cor()">Inserir Cor</button> 
-                    <div style="display: flex;" id="cores">
-                        <div id="paleta"></div>
-                    </div>
-                </div>
- 
-
-
-
+               
             </div>
         </main>
+        <div class="modal" onclick="closeModal(event)">
+            <main>
+                <header class="flex-bt align-center">
+                    <h1>Adicionar Ação</h1>
+                    <button onclick="closeModal()">⨉</button>
+                </header>
+                <form action="">
+                    FAZER O DESAFIO
+
+
+                </form>
+            </main>
+        </div>
     </body>
-    <script>
-    
-        // logo.innerHTML += "<p>Nova Logo<p>" // Insere uma nova tag sem alterar o que ja tem dentro dela 
-        // logo.style.backgroundColor = "#000" // Altera o style (css) de uma determinada logo. OBS: ele insere o elemento Inline
-
-        let corAtual = 'preto'
-
-        const mudar = () => {
-            const logo = document.getElementById("logo")
-            
-            const logoColor = logo.style.backgroundColor
-
-            console.log(logoColor)
-
-            if (corAtual == 'preto'){
-                logo.style.backgroundColor = "#FFF"
-                corAtual = 'branco'
-            } else {
-                logo.style.backgroundColor = "#000"
-                corAtual = 'preto'
-            }
-                
-            console.log("Clicado...")
-        }
-
-        function Pegar_texto(){
-            const txtInput = document.getElementById("TxtInput")
-            const resultado = document.getElementById("resultado")
-
-            resultado.innerHTML = `<p>${txtInput.value}</p>`
-        }
-
-
-        function trocar_cor() {
-            const corInput = document.getElementById("entradaCor")
-            const cor_final = document.getElementById("cor")
-
-            cor_final.style.backgroundColor = corInput.value
-        }
-
-
-        function calcular(operador){
-            const num1 = document.getElementById("num1")
-            const num2 = document.getElementById("num2")
-            const resultado = document.getElementById("conta")
-            if (operador == '+') {
-                resultado.innerHTML = `${+num1.value + +num2.value}` 
-            } else {
-                resultado.innerHTML = `${+num1.value - +num2.value}` 
-            }
-
-        }
-
-        function inserir_cor(){
-            const cor = document.getElementById("cor")
-            const cores = document.getElementById("cores")
-
-        }
-
-
-        
-
-    </script>
+    <script src="./JS/main.js"></script>
 </html>
