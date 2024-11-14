@@ -175,7 +175,7 @@ fieldset {
 }
 
 .modal main {
-    width: 700px;
+    width: 400px;
     height: 500px;
     background-color: #303030;
     border-radius: 20px;
@@ -185,6 +185,7 @@ fieldset {
 .modal main header {
     background: none;
     height: auto;
+    margin: 0 0 16px 0;
 }
 
 .modal main h1 {
@@ -200,5 +201,72 @@ fieldset {
 
 .modal main header button:hover {
     background-color: #424242;
+
+}
+
+.modal main form {
+    width: 100%;
+}
+
+
+
+.card_ticker {
+    width: 300px;
+    background: #2A2C2D;
+    border-radius: 15px;
+    padding: 14px;
+}
+
+.card_ticker header {
+    display: flex;
+        align-items: center;
+    
+    gap: 14px;
+    height: auto;
+    background: none;
+
+}
+
+.card_ticker header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.card_ticker header h4 {
+    margin: 0;
+}
+
+.card_ticker header span {
+    margin: 0 0 0 auto; 
+}
+
+.card_ticker main p {
+    color: #868686;
+}
+
+.card_ticker main p span  {
+    font-size: 40px;
+}
+
+.card_ticker main p span span {
+    font-size: 20px;
+}
+
+.card_ticker footer{
+    display: flex;
+        justify-content: space-between;
+
+}
+
+.card_ticker footer p {
+    color: #868686;
+    margin: 6px 0 0 0;
+}
+
+
+.card_ticker footer p span {
+    color: #E5E5E5;
+    font-size: 18px;
 
 }
