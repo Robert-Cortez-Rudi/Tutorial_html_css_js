@@ -14,15 +14,40 @@ function closeModal (event) {
 }
 
 
-function handleSubmitAddTicker(event) {
-    // Previne o comportamento padrão 
+function AddTicker(event) {
+    //previne o comportamento padrão de recarregar a página ou enviar para algum endereço (action)
     event.preventDefault() 
-    console.log( event.target.urlLogo)
-    console.log( event.target.nameCompany)
-    console.log( event.target.ticker)
-    console.log( event.target.quantity)
-    console.log( event.target.closedValue)
-    
-    
 
+    const card_list = document.querySelector("#card_list")
+
+
+    const url_logo =  event.target.urlLogo.value
+    const name_company = event.target.nameCompany.value
+    const ticker = event.target.ticker.value
+    const quantity = event.target.quantity.value
+    const closed_value = event.target.closedValue.value
+    
+    card_list.innerHTML += `<div id="card_list">
+                            <div class="card_ticker">
+                                <header>
+                                    <img src="${url_logo}" alt="Logo">
+                                    <h4>${name_company}</h4>
+                                    <span>${ticker}</span>
+                                </header>
+
+                                <main>
+                                    <p>Valor: <span style="color: #1EBD1E;">${closed_value} <span>▲ ▼</span></span></p>
+                                </main>
+
+                                <footer>
+                                    <p>Quantidade: <span>${quantity}</span></p>
+                                    <p>Posição: <span>R$ ${+quantity * +closed_value}</span></p>
+                                </footer>
+
+                            </div>
+                        </div>`
+
+    closeModal()
+
+    event.target.reset()
 }
