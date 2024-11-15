@@ -270,3 +270,8 @@ fieldset {
     font-size: 18px;
 
 }
+
+#card_list {
+    display: flex;
+    gap: 20px;
+}
