@@ -215,6 +215,7 @@ fieldset {
     background: #2A2C2D;
     border-radius: 15px;
     padding: 14px;
+    position: relative;
 }
 
 .card_ticker header {
@@ -273,5 +274,19 @@ fieldset {
 
 #card_list {
     display: flex;
+    gap: 20px;
+}
+
+.card_ticker .card_options {
+    position: absolute;
+        top: 0;
+        bottom: 0; 
+        right: 0;
+        left: 0;
+    background-color: #000000BE;
+    border-radius: 15px;
+    display: none;
+        justify-content: center;
+        align-items: center;
     gap: 20px;
 }
