@@ -27,8 +27,7 @@ function AddTicker(event) {
     const quantity = event.target.quantity.value
     const closed_value = event.target.closedValue.value
     
-    card_list.innerHTML += `<div id="card_list">
-                            <div class="card_ticker">
+    card_list.innerHTML += ` <div class="card_ticker" onmouseenter="showCardOptions(event)" onmouseleave="hideCardOptions(event)">
                                 <header>
                                     <img src="${url_logo}" alt="Logo">
                                     <h4>${name_company}</h4>
@@ -44,10 +43,27 @@ function AddTicker(event) {
                                     <p>Posição: <span>R$ ${+quantity * +closed_value}</span></p>
                                 </footer>
 
-                            </div>
-                        </div>`
+                                <div class="card_options">
+                                    <button>Editar</button>
+                                    <button>Excluir</button>
+                                </div>
+                            </div>`
 
     closeModal()
 
     event.target.reset()
+}
+
+
+function showCardOptions(event) {
+
+    const cardoptions = event.target.querySelector('.card_options')
+    cardoptions.style.display = 'flex'
+
+
+}
+
+function hideCardOptions(event) {
+    const cardoptions = event.target.querySelector('.card_options')
+    cardoptions.style.display = 'none'
 }
