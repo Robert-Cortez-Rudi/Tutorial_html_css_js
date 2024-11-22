@@ -31,7 +31,7 @@
             <div class="wrapper">
                 <div class="flex-bt align-center">
                     <h1>Home</h1>
-                    <button style="height: 40px;" onclick="openModal()">Adicionar</button>
+                    <button style="height: 40px;" onclick="openModal('#modal_addTicker')">Adicionar</button>
                 </div>
 
                 <div id="card_list">
@@ -39,11 +39,11 @@
                 </div>
             </div>
         </main>
-        <div class="modal" onclick="closeModal(event)">
+        <div class="modal" id="modal_addTicker" onclick="closeModal(event, '#modal_addTicker')">
             <main>
                 <header class="flex-bt align-center">
                     <h1>Adicionar Ação</h1>
-                    <button onclick="closeModal()">⨉</button>
+                    <button onclick="closeModal(null, '#modal_addTicker')">⨉</button>
                 </header>
 
                 <form onsubmit="AddTicker(event)">
@@ -67,6 +67,36 @@
 
             </main>
         </div>
+
+        <div class="modal" id="modal_editTicker" onclick="closeModal(event, '#modal_editTicker')">
+            <main>
+                <header class="flex-bt align-center">
+                    <h1>Editar Ação</h1>
+                    <button onclick="closeModal(null, '#modal_editTicker')">⨉</button>
+                </header>
+
+                <form onsubmit="editTicker(event)">
+                    <label for="edit_urlLogo">URL logo:</label>
+                    <input type="text" id="edit_urlLogo" name="urlLogo">
+
+                    <label for="edit_nameCompany">Nome da empresa: </label>
+                    <input type="text" id="edit_nameCompany" name="nameCompany">
+
+                    <label for="edit_ticker">Símbolo</label>
+                    <input type="text" id="edit_ticker" name="ticker">
+
+                    <label for="edit_quantity"">Quantidade: </label>
+                    <input type="text" id="edit_quantity" name="quantity">
+
+                    <label for="edit_closedValue">Valor da Ação: </label>
+                    <input type="text" id="edit_closedValue" name="closedValue">
+
+                    <button type="" style="width: 50%;">Atualizar Ação</button>
+                </form>
+
+            </main>
+        </div>
+
     </body>
     <script src="./JS/main.js"></script>
 </html>
